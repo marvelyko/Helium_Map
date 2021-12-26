@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="login">
+  <div class="errorlist"></div><br>
+  <h2>ავტორიზაცია</h2>
+  <div class="errorlist">
+    {{generalError}}
+  </div><br>
+  <form method="POST" action="/user/login">
+    {% csrf_token %}
+    <div class="errorlist">
+      {{form.email.errors}}
+    </div><br>
+    <input type="text" name="email" placeholder="იმეილი"><br>
+    <div class="errorlist">
+      {{form.password.errors}}
+    </div><br>
+    <input type="password" name="password" placeholder="პაროლი"><br>
+    <a href="resetPassword.html" class="resetpassword">პაროლის აღდგენა</a>
+    <button type="submit" id="submit">შესვლა</button>
+  </form>
+</div>
+{% endblock %}

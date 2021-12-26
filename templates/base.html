@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    {% block scripts %}
+    {% endblock %}
+</head>
+<header class="header-cont">
+    <div class="header">
+        <a href="/" class="logo"><img src="{% static 'img/logo.svg' %}"></a>
+        {% if user.is_authenticated %}
+        <ul class="authuser">
+            <a onclick="myDonation()" href="#">
+                <li class="hover-underline-animation">დონაცია</li>
+            </a>
+            <a href="/user/dashboard">
+                <li class="hover-underline-animation">ლოკაციის დამატება</li>
+            </a>
+            <!-- <a href="/user/dashboard">
+                <li>პროფილი</li>
+            </a> -->
+            <a href="/user/logout">
+                <li class="hover-underline-animation">გასვლა</li>
+            </a>
+        </ul>
+        <div id="donation" class="donation">
+            <p>თუ გსურთ პროექტმა გააგრძელოს არსებობა და განვითარება მინიმალური გზავნილი შესაძლებელია იყოს 0.00000001 HNT</p>
+            <h2>Scan QR Code:</h2>
+            <img src="{% static 'img/donationbnb.png' %}">
+            <h2>Wallet Address:</h2>
+            <div style="padding: 10px 0 20px 0;">
+                
+<input type="text" style="width: 100%; border: none; outline: none; text-align: center;" value="13jmdXdpxf2UtvVLCJUcdgiScy7U2iVUXr3mQbwKB3j7FSVkEHm" id="myInput">
+<button style="margin-top: 5px; background-color: #0087ca; cursor: pointer; border-radius: 3px; padding: 5px 10px; border:none; outline:none; color: #fff;" onclick="myFunction()">კოპირება</button>
+
+            </div>
+            <p style="font-weight: bold; font-size: 15px;">გისურვებთ მეტ დეცენტრალიზაციას!</p>
+        </div>
+        {% else %}
+        <ul class="signupin">
+            <a href="/user/login">
+                <li class="auth">ავტორიზაცია</li>
+            </a>
+            <a href="/user/register">
+                <li class="regist">რეგისტრაცია</li>
+            </a>
+        </ul>
+        {% endif %}
+    </div>
+</header>
+<ul class=social-icon>
+    <li><a href="https://www.facebook.com/HeliumGeorgia" target="_blank"><img src="{% static 'img/facebook.png' %}"></a></li>
+    <li><a href="https://discord.gg/qbkRY5yy" target="_blank"><img src="{% static 'img/discord.png' %}"></a></li>
+</ul>
+
+<script type="text/javascript" src="{% static 'map/js/donation.js' %}"></script>
+<script>
+    function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+    }
+</script>
+{% block content %}
+{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 20%;
+    height: 90vh;
+    margin-top: 50px;
+  }
+  #dashboardmap {
+    top: 0;
+    height: 90vh;
+    position: relative;
+    outline: none;
+  }
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    border: 1px solid #ccc;
+    width: 80%;
+    border-left: none;
+    height: 90vh;
+    margin-top: 60px;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .redact{
+    background: blue;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .remove{
+    background: red;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .profilechange{
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 40px;
+  
+  }
+  .profilechange label{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .profilechange input{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 15px;
+  }
+  .submitHandler{
+    background: blue;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 15px;
+  }
+  .submit-pininfo{
+    background: #7289FF;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .pin-selection{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+  }
+  .pin-selection option{
+    color: #fff;
+  }
+  .alreadyhotspot{
+    background: rgb(71, 71, 255);
+  }
+  .willbehotspot{
+    background: rgb(255, 116, 116);
+  }
+  .hiring{
+    background: rgb(22, 156, 22);
+  }
+  select:required:invalid {
+    color: #666;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  

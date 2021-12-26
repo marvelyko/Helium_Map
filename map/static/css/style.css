@@ -1,0 +1,146 @@
+#map {
+  top: 60px;
+  height: 93vh;
+  position: relative;
+  outline: none;
+}
+.header-cont {
+  position: fixed;
+  width: 100%;
+  z-index: 1000000;
+}
+.logo img{
+  height: 40px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 20px;
+  background: #fff;
+}
+.social-icon{
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  z-index: 10000;
+}
+.social-icon img{
+  height: 40px;
+  width: 40px;
+}
+.signupin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.regist {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid #3E5FFF;
+  border-radius: 10px;
+  background: #3E5FFF;
+  color: #fff;
+}
+.auth{
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid #3E5FFF;
+  border-radius: 10px;
+  background: #fff;
+  color: #3E5FFF;
+}
+.signupin li:hover{
+  background: #7289FF;
+  border: 1px solid #7289FF;
+  color: #FFF;
+}
+.authuser{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.authuser li{
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.popup-info {
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 5px;
+  background-color: #fff;
+  z-index: 1000000;
+  margin-top: 50px;
+  display: none;
+  left: 50%;
+  transform: translate(-50%);
+}
+.popup-form input {
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #494949;
+}
+.popup-close {
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+  float: right;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#map .leaflet-popup-content p{
+  margin: 3px 0;
+}
+
+.donation{
+  display: none;
+  max-width: 500px;
+  width: 100%;
+    position: absolute;
+    top: 50px;
+    line-height: 16px;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+.donation h2{
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+.donation p {
+  font-size: 13px;
+  margin: 5px 0;
+}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+<link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashbord.css' %}" />
+    <script type="text/javascript">
+      var USER_PHONE = "{{user.phone}}";
+      var USER_NAME = "{{user.fullname}}";
+    </script>
+    {% endblock %}
+
+    {% block content %}
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'addLocations')">ლოკაციის დამატება</button>
+  <button class="tablinks" onclick="openCity(event, 'myLocations')" >ჩემი ლოკაციები</button>
+  <button class="tablinks" onclick="openCity(event, 'myProfile')">პროფილი</button>
+</div>
+
+<div id="addLocations" class="tabcontent">
+  <div id="dashboardmap"></div>
+</div>
+
+<div id="myLocations" class="tabcontent">
+  <table>
+  <tr>
+    <th>სახელი</th>
+    <th>ტელეფონი</th>
+    <th>კომენტარი</th>
+    <th>წაშლა</th>
+  </tr>
+  
+</table>
+</div>
+
+<div id="myProfile" class="tabcontent">
+  <form class="profilechange">
+    <label>პროფილის რედაქტირება</label>
+    <input type="text" name="name" placeholder="Name surname"><br>
+    <input type="text" name="tel" placeholder="597118175"><br>
+    <input type="password" name="newpassword" placeholder="ახალი პაროლი"><br>
+    <input type="password" name="renewpassword" placeholder="გაიმეორეთ პაროლი"><br>
+    <button type="submit" class="submitHandler">ცვლილების შენახვა</button>
+  </form>
+</div>
+
+<div style="width: 100%">
+  <div class="popup-info" id="popup">
+    <div style="display: flex; justify-content: space-between; font-weight: bold;">
+      <p>ლოკაციის დამატება</p>
+          <div class="popup-close" id="close" onClick="popupClose()">X</div>
+
+    </div>
+    <form class="popup-form" onsubmit="submitData(event)" />
+    {%csrf_token%}
+    <select value="hotspots" name="category" class="pin-selection" required>
+      <option value="" disabled selected>აირჩიეთ ტიპი</option>
+      <option value="1" class="alreadyhotspot">უკვე დგას</option>
+      <option value="2" class="willbehotspot">ვაპირებ დადგმას</option>
+      <option value="3" class="hiring">ვაქირავებ ადგილს</option>
+    </select>
+    <input type="text" name="phone" placeholder="ტელეფონი" /><br />
+    <input type="text" name="fullname" placeholder="სახელი გვარი" /><br />
+    <input type="text" name="comment" placeholder="კომენტარი" /><br />
+    <input class="submit-pininfo" type="submit" value="შენახვა" />
+    
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript" src="{% static 'user/js/verticaltab.js' %}"></script>
+<script type="text/javascript" src="{% static 'user/js/scripts.js' %}"></script>
+
+{% endblock %}
