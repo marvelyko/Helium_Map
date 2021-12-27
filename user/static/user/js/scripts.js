@@ -63,7 +63,7 @@ window.onload = (e) => {
       var circle = L.circle([elem.point.latitude, elem.point.longtitude], {
           color: `${elem.category.category_color}`,
           fillColor: `${elem.category.category_color}`,
-          fillOpacity: 0.5,
+          fillOpacity: 0.9,
           radius: 300
       }).addTo(map);
       circle.bindPopup(`${elem.point.name}<br>${elem.point.phone}<br>${elem.point.comment}`);

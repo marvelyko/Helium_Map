@@ -144,3 +144,62 @@
   font-size: 13px;
   margin: 5px 0;
 }
+.walletaddress{
+  padding: 10px 0 20px 0;
+}
+.walletaddress input{
+  width: 100%; 
+  border: none; 
+  outline: none; 
+  text-align: center;
+}
+.walletaddress button{
+  margin-top: 5px; 
+  background-color: #0087ca; 
+  cursor: pointer; 
+  border-radius: 3px; 
+  padding: 5px 10px; 
+  border:none; 
+  outline:none; 
+  color: #fff;
+}
+.wishdecentr{
+  font-weight: bold; 
+  font-size: 15px;
+}
+#dropdown{
+  background: none;
+    border: none;
+    font-size: 16px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  top: 45px;
+  right: 45px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000000000;
+}
+.dropdown-content a {
+  color: #0087ca;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #0087ca; color: #fff;}
+
+#dropdown:hover .dropdown-content {display: block;}
+
+@media (max-width: 550px){
+  .authuser li{
+    font-size: 12px;
+  }
+  .dropdown-content a{
+    font-size: 12px;
+  }
+  .signupin {
+    font-size: 12px;
+  }
+}

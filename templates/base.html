@@ -22,25 +22,32 @@
             <a href="/user/dashboard">
                 <li class="hover-underline-animation">ლოკაციის დამატება</li>
             </a>
-            <!-- <a href="/user/dashboard">
-                <li>პროფილი</li>
-            </a> -->
+            <button id="dropdown" href="/user/dashboard">
+                <li class="hover-underline-animation ">სერვისები</li>
+                <div class="dropdown-content">
+                    <a href="#">გამოწერა</a>
+                    <a href="#">ინსტალაცია</a>
+                    <a href="#">მონიტორინგი</a>
+                    <a href="#">ადგილის შეფასება</a>
+                    <a href="#">მაინერის უსაფრთხოება</a>
+                    <a href="#">Proof of Staking</a>
+                </div>
+            </button>
             <a href="/user/logout">
                 <li class="hover-underline-animation">გასვლა</li>
             </a>
         </ul>
+            
         <div id="donation" class="donation">
             <p>თუ გსურთ პროექტმა გააგრძელოს არსებობა და განვითარება მინიმალური გზავნილი შესაძლებელია იყოს 0.00000001 HNT</p>
             <h2>Scan QR Code:</h2>
             <img src="{% static 'img/donationbnb.png' %}">
             <h2>Wallet Address:</h2>
-            <div style="padding: 10px 0 20px 0;">
-                
-<input type="text" style="width: 100%; border: none; outline: none; text-align: center;" value="13jmdXdpxf2UtvVLCJUcdgiScy7U2iVUXr3mQbwKB3j7FSVkEHm" id="myInput">
-<button style="margin-top: 5px; background-color: #0087ca; cursor: pointer; border-radius: 3px; padding: 5px 10px; border:none; outline:none; color: #fff;" onclick="myFunction()">კოპირება</button>
-
+            <div class="walletaddress">
+                <input type="text" value="13jmdXdpxf2UtvVLCJUcdgiScy7U2iVUXr3mQbwKB3j7FSVkEHm" id="myInput">
+                <button onclick="myWalletAddress()">კოპირება</button>
             </div>
-            <p style="font-weight: bold; font-size: 15px;">გისურვებთ მეტ დეცენტრალიზაციას!</p>
+            <p class="wishdecentr">გისურვებთ მეტ დეცენტრალიზაციას!</p>
         </div>
         {% else %}
         <ul class="signupin">
@@ -59,25 +66,10 @@
     <li><a href="https://discord.gg/qbkRY5yy" target="_blank"><img src="{% static 'img/discord.png' %}"></a></li>
 </ul>
 
-<script type="text/javascript" src="{% static 'map/js/donation.js' %}"></script>
-<script>
-    function myFunction() {
-      /* Get the text field */
-      var copyText = document.getElementById("myInput");
-    
-      /* Select the text field */
-      copyText.select();
-      copyText.setSelectionRange(0, 99999); /* For mobile devices */
-    
-      /* Copy the text inside the text field */
-      navigator.clipboard.writeText(copyText.value);
-      
-      /* Alert the copied text */
-      alert("Copied the text: " + copyText.value);
-    }
-</script>
+
 {% block content %}
 {% endblock %}
+<script type="text/javascript" src="{% static 'map/js/donation.js' %}"></script>
 
 </body>
 

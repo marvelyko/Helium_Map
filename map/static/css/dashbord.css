@@ -5,7 +5,7 @@
     background-color: #f1f1f1;
     width: 20%;
     height: 90vh;
-    margin-top: 50px;
+    margin-top: 60px;
   }
   #dashboardmap {
     top: 0;
@@ -139,4 +139,23 @@
   option[value=""][disabled] {
     display: none;
   }
-  
+  @media (max-width: 600px){
+    .tab button{
+      display: block;
+    background-color: inherit;
+    color: black;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+      font-size: 12px;
+      padding: 20px 4px;
+    }
+    table{
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
